@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "eee42472-1e99-4680-a625-28adac40df1f",
+		"name": "TODO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\": \"learn Spring Boot\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/todo/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark Task as Done",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"description\": \"learn Spring Boot\",\n    \"status\": \"done\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/todo/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve All Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/todo/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/todo/task/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"task",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Task By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/todo/task/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"task",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
