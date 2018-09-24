@@ -46,7 +46,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": 3,\n    \"description\": \"learn Spring Boot\",\n    \"status\": \"done\"\n}"
+					"raw": "{\n    \"id\": 2,\n    \"description\": \"learn Spring Boot\",\n    \"checked\": true\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/todo/task",
@@ -58,6 +58,57 @@
 					"path": [
 						"todo",
 						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change description",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"description\": \"learn JavaScript\",\n    \"checked\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/todo/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Task By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/todo/task/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo",
+						"task",
+						"1"
 					]
 				}
 			},
@@ -88,28 +139,6 @@
 			"name": "Remove Task",
 			"request": {
 				"method": "DELETE",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "http://localhost:8080/todo/task/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"todo",
-						"task",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Find Task By Id",
-			"request": {
-				"method": "GET",
 				"header": [],
 				"body": {},
 				"url": {

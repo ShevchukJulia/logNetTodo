@@ -14,7 +14,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import todo.model.Task;
-import todo.model.TaskStatus;
 import todo.service.TaskService;
 
 import java.util.Collections;
@@ -43,7 +42,6 @@ public class TaskControllerTest {
         task = new Task();
         task.setId(1L);
         task.setDescription("Description");
-        task.setStatus(TaskStatus.NEW);
     }
 
     @Test

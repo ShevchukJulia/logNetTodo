@@ -17,7 +17,6 @@ public class Task {
     @NotEmpty
     private String description;
 
-    @Enumerated
-    private TaskStatus status;
+    private boolean checked;
 
 }

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import todo.model.Task;
-import todo.model.TaskStatus;
 import todo.repository.TaskRepository;
 
 import java.text.MessageFormat;
@@ -25,8 +24,6 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public Task createTask(Task task) {
-        task.setStatus(TaskStatus.NEW);
-
         Task createdTask = taskRepository.save(task);
         log.info("New task was created, id {}", createdTask.getId());
 
@@ -40,12 +37,9 @@ public class TaskServiceImpl implements TaskService {
 
         if (!StringUtils.isEmpty(task.getDescription())) {
             taskToUpdate.setDescription(task.getDescription());
-
         }
 
-        if (task.getStatus() != null) {
-            taskToUpdate.setStatus(task.getStatus());
-        }
+        taskToUpdate.setChecked(task.isChecked());
 
         Task savedTask = taskRepository.save(taskToUpdate);
         log.info("Task with id {} was updated", savedTask.getId());
