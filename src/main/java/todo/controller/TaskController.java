@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import todo.model.Task;
 import todo.service.TaskService;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,7 +22,7 @@ public class TaskController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public Task createTask(@RequestBody @Valid Task task) {
+    public Task createTask(@RequestBody Task task) {
         return service.createTask(task);
     }
 

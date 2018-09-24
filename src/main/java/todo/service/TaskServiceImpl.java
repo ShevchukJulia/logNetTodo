@@ -24,6 +24,9 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public Task createTask(Task task) {
+        if (task.getDescription() == null) {
+            task.setDescription("");
+        }
         Task createdTask = taskRepository.save(task);
         log.info("New task was created, id {}", createdTask.getId());
 
